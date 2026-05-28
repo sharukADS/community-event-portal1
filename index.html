@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Event Portal</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <nav>
+    <h2>Community Portal</h2>
+
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#events">Events</a>
+      <a href="#register">Register</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+      <h1>Welcome To Community Event Portal</h1>
+
+      <p>
+        Join exciting local events, sports activities,
+        music festivals and food celebrations.
+      </p>
+
+      <button>Explore Events</button>
+    </div>
+
+  </section>
+
+  <section class="events" id="events">
+
+    <h2>Upcoming Events</h2>
+
+    <div class="event-container">
+
+      <div class="card">
+        <img src="images/music.jfif" alt="Music Event">
+
+        <h3>Music Festival</h3>
+
+        <p>Enjoy live music performances and fun activities.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/sports.jfif" alt="Sports Event">
+
+        <h3>Sports Event</h3>
+
+        <p>Participate in exciting community sports competitions.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/food.jfif" alt="Food Festival">
+
+        <h3>Food Festival</h3>
+
+        <p>Explore delicious dishes and local food stalls.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="register" id="register">
+
+    <h2>Event Registration</h2>
+
+    <form id="eventForm">
+
+      <input type="text"
+             placeholder="Enter Your Name"
+             required>
+
+      <input type="email"
+             placeholder="Enter Your Email"
+             required>
+
+      <input type="date" required>
+
+      <select id="eventType" onchange="showFee()">
+
+        <option value="">Select Event</option>
+
+        <option value="Music Festival">
+          Music Festival
+        </option>
+
+        <option value="Sports Event">
+          Sports Event
+        </option>
+
+        <option value="Food Festival">
+          Food Festival
+        </option>
+
+      </select>
+
+      <p id="fee"></p>
+
+      <input type="text"
+             placeholder="Phone Number"
+             onblur="validatePhone(this)">
+
+      <textarea id="feedback"
+                placeholder="Give Your Feedback"
+                onkeyup="countChars()"></textarea>
+
+      <p id="count">Characters: 0</p>
+
+      <button type="button"
+              onclick="submitForm()">
+
+        Register Now
+
+      </button>
+
+      <p id="message"></p>
+
+    </form>
+
+  </section>
+
+
+  <section class="video-section">
+
+    <h2>Community Promo Video</h2>
+
+    <video controls
+           width="700"
+           oncanplay="videoReady()">
+
+      <source src="video/video.mp4"
+              type="video/mp4">
+
+    </video>
+
+    <p id="videoMessage"></p>
+
+  </section>
+
+  <section class="location-section">
+
+    <h2>Find Nearby Events</h2>
+
+    <button onclick="findLocation()">
+      Find My Location
+    </button>
+
+    <p id="location"></p>
+
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
